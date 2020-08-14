@@ -23,7 +23,7 @@ class Index extends Component {
   grabUserInfo() {
     console.log('button clicked');
     axios
-      .get('http://localhost:3000/grabUsers')
+      .get('http://locahost:3000/grabUsers')
       .then((res) => console.log('HERE IS YOUR DATA:', res.data))
       .catch((err) => console.error('there was a problem', err));
   }
@@ -41,6 +41,7 @@ class Index extends Component {
     return (
       <div>
         <h1>Welcome to Juke Jams</h1>
+        <h2>HEYYYYYYYYY</h2>
 
         <input
           type="text"
