@@ -23,7 +23,7 @@ class Index extends Component {
   grabUserInfo() {
     console.log('button clicked');
     axios
-      .get('http://locahost:3000/grabUsers')
+      .get('https://locahost:3000/grabUsers')
       .then((res) => console.log('HERE IS YOUR DATA:', res.data))
       .catch((err) => console.error('there was a problem', err));
   }
@@ -33,7 +33,7 @@ class Index extends Component {
     //axios call
 
     axios
-      .post('http://localhost:3000/addUsers', { firstName: this.state.name })
+      .post('https://localhost:3000/addUsers', { firstName: this.state.name })
       .then(() => console.log('Successful post'));
   }
 
