@@ -11,6 +11,12 @@ See the License for the specific language governing permissions and limitations 
 Amplify Params - DO NOT EDIT */
 
 var express = require('express');
+const path = require('path');
+const DIST_DIR = path.join(__dirname, '../dist');
+// const { PORT } = process.env;
+app.use(express.static(DIST_DIR));
+const cors = require('cors');
+app.use(cors());
 var bodyParser = require('body-parser');
 var awsServerlessExpressMiddleware = require('aws-serverless-express/middleware');
 
@@ -38,52 +44,52 @@ app.get('/grabUsers', function (req, res) {
   res.json('HELLO WORLD');
 });
 
-app.get('/data/*', function (req, res) {
-  // Add your code here
-  res.json({ success: 'get call succeed!', url: req.url });
-});
+// app.get('/data/*', function (req, res) {
+//   // Add your code here
+//   res.json({ success: 'get call succeed!', url: req.url });
+// });
 
-/****************************
- * Example post method *
- ****************************/
+// /****************************
+//  * Example post method *
+//  ****************************/
 
-app.post('/data', function (req, res) {
-  // Add your code here
-  res.json({ success: 'post call succeed!', url: req.url, body: req.body });
-});
+// app.post('/data', function (req, res) {
+//   // Add your code here
+//   res.json({ success: 'post call succeed!', url: req.url, body: req.body });
+// });
 
-app.post('/data/*', function (req, res) {
-  // Add your code here
-  res.json({ success: 'post call succeed!', url: req.url, body: req.body });
-});
+// app.post('/data/*', function (req, res) {
+//   // Add your code here
+//   res.json({ success: 'post call succeed!', url: req.url, body: req.body });
+// });
 
-/****************************
- * Example put method *
- ****************************/
+// /****************************
+//  * Example put method *
+//  ****************************/
 
-app.put('/data', function (req, res) {
-  // Add your code here
-  res.json({ success: 'put call succeed!', url: req.url, body: req.body });
-});
+// app.put('/data', function (req, res) {
+//   // Add your code here
+//   res.json({ success: 'put call succeed!', url: req.url, body: req.body });
+// });
 
-app.put('/data/*', function (req, res) {
-  // Add your code here
-  res.json({ success: 'put call succeed!', url: req.url, body: req.body });
-});
+// app.put('/data/*', function (req, res) {
+//   // Add your code here
+//   res.json({ success: 'put call succeed!', url: req.url, body: req.body });
+// });
 
-/****************************
- * Example delete method *
- ****************************/
+// /****************************
+//  * Example delete method *
+//  ****************************/
 
-app.delete('/data', function (req, res) {
-  // Add your code here
-  res.json({ success: 'delete call succeed!', url: req.url });
-});
+// app.delete('/data', function (req, res) {
+//   // Add your code here
+//   res.json({ success: 'delete call succeed!', url: req.url });
+// });
 
-app.delete('/data/*', function (req, res) {
-  // Add your code here
-  res.json({ success: 'delete call succeed!', url: req.url });
-});
+// app.delete('/data/*', function (req, res) {
+//   // Add your code here
+//   res.json({ success: 'delete call succeed!', url: req.url });
+// });
 
 app.listen(3000, function () {
   console.log('App started');
