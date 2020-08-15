@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import { API } from 'aws-amplify';
-import { withAuthenticator } from '@aws-amplify/ui-react';
 
 class Index extends Component {
   constructor(props) {
@@ -109,4 +108,4 @@ class Index extends Component {
   }
 }
 
-export default withAuthenticator(Index);
+export default Index;
