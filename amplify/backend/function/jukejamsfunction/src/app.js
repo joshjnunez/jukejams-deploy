@@ -68,10 +68,10 @@ app.post('/addUsers', async function (req, res) {
   return res.send('HELLO WORLD WE DID IT');
 });
 
-// app.get('/grabUsers', function (req, res) {
-//   // Add your code here
-//   res.json('HELLO WORLD');
-// });
+app.get('/grabUsers', function (req, res) {
+  // Add your code here
+  res.json('HELLO WORLD');
+});
 
 // app.get('/data/*', function (req, res) {
 //   // Add your code here
