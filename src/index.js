@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
+import { API } from 'aws-amplify';
 
 class Index extends Component {
   constructor(props) {
@@ -57,12 +58,35 @@ class Index extends Component {
     console.log('button clicked');
     //axios call
 
-    axios
-      .post(
-        'https://y7wzv5d7yc.execute-api.us-east-1.amazonaws.com/dev/addUsers',
-        { firstName: this.state.name }
-      )
-      .then(() => console.log('Successful post'));
+    const apiName = 'jukeapi';
+    const path =
+      'https://y7wzv5d7yc.execute-api.us-east-1.amazonaws.com/dev/addUsers';
+    const myInit = {
+      // OPTIONAL
+      body: { name: 'Josh' },
+      headers: {}, // OPTIONAL
+      response: true, // OPTIONAL (return the entire Axios response object instead of only response.data)
+      queryStringParameters: {
+        // OPTIONAL
+        name: 'param',
+      },
+    };
+
+    API.post(apiName, path, myInit)
+      .then((response) => {
+        // Add your code here
+        console.log('HERE IS THE DATA:', response.data);
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
+
+    // axios
+    //   .post(
+    //     'https://y7wzv5d7yc.execute-api.us-east-1.amazonaws.com/dev/addUsers',
+    //     { firstName: this.state.name }
+    //   )
+    //   .then(() => console.log('Successful post'));
   }
 
   render() {

@@ -39,10 +39,39 @@ app.use(function (req, res, next) {
  * Example get method *
  **********************/
 
-app.get('/grabUsers', function (req, res) {
-  // Add your code here
-  res.json('HELLO WORLD');
+app.post('/addUsers', async function (req, res) {
+  // Assign the location value to the variable location from the body object
+  // const { location } = req.body;
+  // // Encode the variable so we can send the location in a URL
+  // const encodedLocation = encodeURIComponent(location);
+  // try {
+  //   // Call AWS Secrets to get RapidAPI key
+  //   const secretObj = await secret();
+  //   // Call the Weather API
+  //   const { data } = await axios({
+  //     method: 'GET',
+  //     url: `https://aerisweather1.p.rapidapi.com/observations/${encodedLocation}`,
+  //     headers: {
+  //       'content-type': 'application/octet-stream',
+  //       'x-rapidapi-host': 'aerisweather1.p.rapidapi.com',
+  //       'x-rapidapi-key': secretObj['RAPIDAPI-KEY'],
+  //       useQueryString: true,
+  //     },
+  //   });
+  // Pull the information that we need from the Weather API response
+  // const weatherData = {
+  //   conditions: data.response.ob.weather,
+  //   tempC: data.response.ob.tempC,
+  //   tempF: data.response.ob.tempF
+  // }
+  // Return the data object
+  return res.send('HELLO WORLD WE DID IT');
 });
+
+// app.get('/grabUsers', function (req, res) {
+//   // Add your code here
+//   res.json('HELLO WORLD');
+// });
 
 // app.get('/data/*', function (req, res) {
 //   // Add your code here
