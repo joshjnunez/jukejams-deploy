@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
+
 class Index extends Component {
   constructor(props) {
     super(props);
@@ -22,8 +22,9 @@ class Index extends Component {
 
   grabUserInfo() {
     console.log('button clicked');
+
     axios
-      .get('http://localhost:3000/grabUsers')
+      .get('https://localhost:3000/grabUsers')
       .then((res) => console.log('HERE IS YOUR DATA:', res.data))
       .catch((err) => console.error('there was a problem', err));
   }
@@ -33,7 +34,7 @@ class Index extends Component {
     //axios call
 
     axios
-      .post('http://localhost:3000/addUsers', { firstName: this.state.name })
+      .post('https://locahost:3000/addUsers', { firstName: this.state.name })
       .then(() => console.log('Successful post'));
   }
 
@@ -41,6 +42,7 @@ class Index extends Component {
     return (
       <div>
         <h1>Welcome to Juke Jams</h1>
+        <h2>HEYYYYYYYYY</h2>
 
         <input
           type="text"
@@ -54,4 +56,5 @@ class Index extends Component {
     );
   }
 }
-ReactDOM.render(<Index />, document.getElementById('root'));
+
+export default Index;
