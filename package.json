@@ -4,8 +4,8 @@
   "description": "deploy with AWS",
   "main": "index.js",
   "scripts": {
-    "start": "node server/index.js",
-    "dev": "webpack --mode development && nodemon server/index.js",
+    "start": "node backend/app.js",
+    "dev": "webpack --mode development && node backend/app.js",
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
