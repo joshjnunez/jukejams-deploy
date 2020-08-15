@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import { API } from 'aws-amplify';
+import { withAuthenticator } from '@aws-amplify/ui-react';
+
+import Amplify, { API } from 'aws-amplify';
+import awsconfig from './aws-exports';
+
+Amplify.configure(awsconfig);
 
 class Index extends Component {
   constructor(props) {
@@ -30,7 +36,7 @@ class Index extends Component {
     const myInit = {
       // OPTIONAL
       headers: {}, // OPTIONAL
-      response: true, // OPTIONAL (return the entire Axios response object instead of only response.data)
+      response: true, // OPTIONAL (return the  entire Axios response object instead of only response.data)
       queryStringParameters: {
         // OPTIONAL
         name: 'param',
@@ -108,4 +114,4 @@ class Index extends Component {
   }
 }
 
-export default Index;
+export default withAuthenticator(Index);
