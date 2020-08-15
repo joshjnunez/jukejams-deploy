@@ -27,9 +27,9 @@ app.post('/addUsers', (req, res) => {
 // app.get('/api', (req, res) => {
 //   res.send('hey it worked');
 // });
-app.get('/', (req, res) => {
-  res.sendFile(HTML_FILE);
-});
+// app.get('/', (req, res) => {
+//   res.sendFile(HTML_FILE);
+// });
 
 app.listen(PORT, function () {
   console.log('App listening on port: ' + PORT);
