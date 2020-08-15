@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/joshjnunez/jukejams-deploy/issues"
   },
-  "homepage": "https://github.com/joshjnunez/jukejams-deploy#readme",
+  "homepage": "https://github.com/joshjnunez/jukejams-deploy",
   "dependencies": {
     "@aws-amplify/ui-react": "^0.2.14",
     "@babel/preset-env": "^7.11.0",

@@ -4,11 +4,6 @@ import axios from 'axios';
 import { API } from 'aws-amplify';
 import { withAuthenticator } from '@aws-amplify/ui-react';
 
-import Amplify, { API } from 'aws-amplify';
-import awsconfig from './aws-exports';
-
-Amplify.configure(awsconfig);
-
 class Index extends Component {
   constructor(props) {
     super(props);
