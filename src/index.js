@@ -84,6 +84,4 @@ class Index extends Component {
   }
 }
 
-module.exports = {
-  Index,
-};
+export default Index;
