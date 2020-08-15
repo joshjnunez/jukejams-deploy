@@ -1,0 +1,34 @@
+{
+    "paths": [
+        {
+            "name": "/data",
+            "lambdaFunction": "jukejamsfunction",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "jukeapi",
+    "apiName": "jukeapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "jukejamsfunction"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-jukejamsdeploy-dev-175244-authRole",
+        "unAuthRoleName": "amplify-jukejamsdeploy-dev-175244-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "jukejamsfunction",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
